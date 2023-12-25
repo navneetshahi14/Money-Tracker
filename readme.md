@@ -1,6 +1,7 @@
 # Money Tracker Web Application
 
-![demo](https://github.com/navneetshahi14/Money-tracker/assets/138277449/1d1cfc46-9593-4101-81ba-5659e8ffe976)
+![demo](https://github.com/navneetshahi14/Money-tracker/assets/138277449/141c27da-1ef2-47ad-bc80-6590710805d0)
+
 
 ## Table of Contents
 - [Introduction](#introduction)
