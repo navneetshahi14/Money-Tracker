@@ -74,12 +74,7 @@ We welcome contributions from the community. To contribute, please follow these 
 2. Create a new branch for your feature or bug fix.
 3. Make your changes and submit a pull request.
 
-## License
-
-This project is licensed under the [MIT License](LICENSE.md) - see the [LICENSE.md](LICENSE.md) file for details.
-
 ## Acknowledgments
 
-- Special thanks to [Author Name](link-to-author-profile) for inspiration or guidance.
-- Icons made by [Icon Author](link-to-icon-author-profile) from www.flaticon.com.
+- Special thanks to [Navneet shahi](https://github.com/navneetshahi14) for inspiration or guidance.
 
