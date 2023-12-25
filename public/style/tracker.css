@@ -1,0 +1,148 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: content-box;
+    font-family: 'Poppins', sans-serif;
+    
+}
+.container{
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background: #a8a5a527;
+
+    overflow-x: hidden;
+}
+.container>.balance-box{
+    margin: 2px 60px;
+}
+.container>h2{
+    text-align: center;
+}
+.container>.inc-exp-box{
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin: 5px 90px;
+    padding: 5px 20px;
+    background: #ffff;
+    border-radius: 20px;
+    filter: drop-shadow(0 0 5px white);
+}
+.inc-exp-box>.seprator{
+    background: #000;
+    height: 98%;
+    width: 5px;
+    border-radius: 20px;
+}
+.inc-exp-box>.income-box{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.income-box>.incomeAmt{
+    text-align: center;
+    font-weight: 800;
+    color: green;
+}
+.inc-exp-box>.expense-box{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.expense-box>.expenseAmt{
+    text-align: center;
+    font-weight: 800;
+    color: red;
+}
+
+.seprator{
+    background: #000;
+    height: 5px;
+    width: 95%;
+    border-radius: 20px;
+}
+
+.history-box{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* padding: 20px auto; */
+    /* overflow-y: scroll; */
+    /* height: 500px; */
+    /* overflow-x: hidden; */
+    margin: 1px 20px;
+}
+.history-box>.history-table{
+    display: flex;
+    gap: 280px;
+    margin: 5px 20px;
+}
+.history-table>.history-name{
+    font-weight: 700;
+    width: 50%;
+}
+.history-table>.history-amount{
+    font-weight: 700;
+    color: green;
+    width: 50%;
+}
+#income{
+    color: green;
+}
+#expense{
+    color: red;
+}
+
+
+
+.transaction-data{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 5px 20px;
+}
+
+.transaction-data>form{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    justify-content: center;
+}
+.transactionForm>label{
+    font-weight: 700;
+}
+.transactionForm>input{
+    width: 50%;
+    padding: 1px 5px;
+    outline: 0;
+}
+.transactionForm>select{
+    margin: 5px 0;
+    width: 50%;
+    padding: 1px 5px;
+    outline: 0;
+}
+#Submit{
+    width: 30%;
+    padding: 2px 10px ;
+    font-size: 17px;
+    cursor: pointer;
+}
+
+.logout{
+    position: absolute;
+    right: 90px;
+    top: 10px;
+    background: #000;
+    padding: 5px 8px;
+    cursor: pointer;
+    border-radius: 10px 20px ;
+}
+.logout>a{
+    text-decoration: none;
+    color: #fff;
+
+}

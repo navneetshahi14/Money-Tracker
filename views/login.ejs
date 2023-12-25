@@ -1,0 +1,37 @@
+<%- include('./layout/userheader.ejs')%>
+
+
+<div class="login">
+    <h1>Login</h1>
+    <!-- <p style="color:red;" class="msg-box" id="msg"></p> -->
+    <form class="input" id="loginForm" method="post">
+        
+
+        <div class="mail">
+        <label for="Mail"><i class="fa-solid fa-envelope"></i></label>
+        <input type="email" name="email" id="Mail" placeholder="Email"></div>
+
+        <div class="password">
+        <label for="Pass"><i class="fa-solid fa-lock"></i></label>
+        <input type="password" name="password" id="Pass" placeholder="Password" >
+        </div>
+
+        
+        <input type="submit" value="Submit" id="Submit" class="submit">
+        
+    </form>
+    <p>If you don't have Account <a href="/registration">Register</a></p>
+
+
+    <!-- <script>
+        const msg =  document.getElementById('msg-box')
+
+        msg.onload = () =>{
+            setTimeout(() => {
+                $('.msg-box').text("")
+            }, 4000);
+        }
+    </script> -->
+
+
+<%- include('./layout/userfooter.ejs')%>

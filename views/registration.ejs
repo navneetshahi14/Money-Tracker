@@ -1,0 +1,31 @@
+<%- include('./layout/userheader.ejs')%>
+
+<div class="login">
+    <h1>SignUp</h1>
+    
+    <form class="input" method="post" >
+        <div class="user">
+        <label for="User"><i class="fa-solid fa-user"></i></label>
+        <input type="text" name="name" id="User" placeholder="Username"></div>
+        <div class="mail">
+        <label for="Mail"><i class="fa-solid fa-envelope"></i></label>
+        <input type="email" name="email" id="Mail" placeholder="Email"></div>
+        <div class="password">
+        <label for="Pass"><i class="fa-solid fa-lock"></i></label>
+        <input type="password" name="password" id="Pass" placeholder="Password" >
+        </div>
+        <div class="confirm">
+        <label for="Con"><i class="fa-solid fa-user"></i></label>
+        <input type="password" name="confirm" id="Con" placeholder="Confirm-password"></div>
+        <input type="submit" value="Submit" id="Submit" class="submit">
+        
+    </form>
+    <p>if you have accout already <a href="/login">Login</a></p>
+
+<!-- 
+    <script>
+        $('.msg-box').text(message)
+        
+    </script> -->
+
+<%- include('./layout/userfooter.ejs')%>

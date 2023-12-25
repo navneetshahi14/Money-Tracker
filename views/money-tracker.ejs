@@ -1,0 +1,157 @@
+<%- include('./layout/trackerheader.ejs') %>
+
+<h2>Money-Tracking</h2>
+        <div class="balance-box">
+            <h3 > Hi, <%= user.name %> Your Balance</h3>
+            <h1 id="YourBalance">0.00</h1>
+        </div>
+        <div class="inc-exp-box">
+            <div class="income-box">
+                <h2>Income</h2>
+
+                <%
+                    if(user.transaction.length >= 0){
+                        let a = 0;
+                        user.transaction.forEach(function(money){
+                            if(money.type === "income"){
+                                a += parseInt(money.money) 
+                            }
+                        })
+                        user.transaction.money = a;
+                        %>
+                        <p class="incomeAmt" id="incomeAmt"><%= parseInt(user.transaction.money) %> </p>
+                        <%
+                    }
+                %>
+
+                <!-- <p class="incomeAmt" id="incomeAmt"> </p> -->
+                <!-- <input type="text" class="incomeAmt" id="incomeAmt"> -->
+            </div>
+            <div class="seprator"></div>
+            <div class="expense-box">
+                <h2>Expense</h2>
+                <%
+                    if(user.transaction.length >= 0){
+                        let b = 0
+                        user.transaction.forEach(function(money){
+                            if(money.type === "expense"){
+                                b += parseInt(money.money) 
+                            }
+                        })
+                        
+                        user.transaction.money = b
+                        %>
+                        <!-- <p class="incomeAmt" id="incomeAmt"><%= user.transaction.money %> </p> -->
+                        <p class="expenseAmt" id="expenseAmt"><%= user.transaction.money %> </p>
+                        <%
+                    }
+                %>
+                <!-- <p class="expenseAmt" id="expenseAmt">0</p> -->
+                <!-- <input type="text" class="expenseAmt" id="expenseAmt"> -->
+            </div>
+        </div>
+        <div class="history-box">
+            <h2>History</h2>
+            <div class="seprator"></div>
+            <%
+            if(user.transaction.length >= 0){
+                user.transaction = user.transaction.reverse()
+                user.transaction.forEach(function(money){
+                    %>
+                    <div class="history-table" id="history-table">
+                        <div class="history-name" id="history-name" ><%= money.title %></div>
+                        <%
+                        if(money.type === "income"){
+                            %>
+                            <div class="history-amount" id="income" style="color: green;">+<%= money.money %></div>
+                            <%
+                        }else{
+                            %>
+                            <div class="history-amount" id="income" style="color: red;">-<%= money.money %></div>
+                            <%
+                        }
+                        %>
+                        <div class="history-amount" id="income"><%= money.date %></div> 
+                    </div>
+                        <%
+                    })
+                }
+                %>               
+        </div>
+
+        <div class="transaction-data">
+            <h2>Add Transactions</h2>
+            <div class="seprator"></div>
+            <p class="com-status" style="color: green;"></p>
+            <form class="transactionForm" id="transaction-Form">
+                <input type="hidden" value="<%= user.email %>"  name="email">
+                <input type="hidden" value="<%= user._id %>"  name="Uid">
+                <label for="text">Text</label>
+                <input type="text" name="text" id="text" placeholder="Text...">
+                <label for="Amt">Amount</label>
+                <input type="number" name="Amt" id="Amt" placeholder="Amount...">
+                <select name="type" id="type">
+                    <option value="income">Income</option>
+                    <option value="expense">Expense</option>
+                </select>
+                <input type="hidden" id="date" name="date" >
+                <input type="submit" value="Submit" id="Submit">
+            </form>
+
+            
+        </div>
+        <div class="logout">
+            <a href="/logout" class="logouta">Logout</a>
+        </div>
+
+        <script>
+            $(document).ready(function(){
+                $("#transaction-Form").submit(function(e){
+
+                    e.preventDefault()
+
+                    let formData = $(this).serialize()
+
+                    $.ajax({
+                        url:"/add-money",
+                        type:"POST",
+                        data:formData,
+                        success:function(data){
+                            $('.com-status').text(data.msg)
+                            setTimeout(() => {
+                                $('.com-status').text("")
+                            }, 5000);
+                        }
+                    })
+                })
+            })
+        </script>
+
+        <!-- <script>
+            $(document).ready(function(){
+        $('#transaction-Form').submit(function(event){
+            event.preventDefault()
+
+            let formData = $(this).serialize()
+
+            $.ajax({
+                url:"/add-money",
+                type:"POST",
+                data: new FormData(this),
+                contentType:false,
+                cache:false,
+                processData:false,
+                success:function(data){
+                    $('.com-status').text(data.msg)
+                    setTimeout(() => {
+                        $('.com-status').text("")
+                    }, 5000);
+                }
+            })
+        })
+
+    })
+
+        </script> -->
+
+<%- include('./layout/trackerfooter.ejs') %>
